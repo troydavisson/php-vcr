@@ -37,7 +37,7 @@ class Configuration
         'post_fields' => array('VCR\RequestMatcher', 'matchPostFields'),
     );
     private $whiteList = array();
-    private $blackList = array('src/VCR/LibraryHooks/', 'src/VCR/Util/SoapClient');
+    private $blackList = array('src/VCR/LibraryHooks/', 'src/VCR/Util/SoapClient', 'tests/VCR/Filter');
 
     /**
      *
@@ -50,7 +50,8 @@ class Configuration
 
     /**
      * @param string|array $paths
-     * @return $this
+     *
+     * @return Configuration
      */
     public function setBlackList($paths)
     {
@@ -59,7 +60,6 @@ class Configuration
         $this->blackList = $paths;
 
         return $this;
-
     }
 
     /**
